@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Set Times</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dancer</th>
+      <th>Stage</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @set_times.each do |set_time| %>
+      <tr>
+        <td><%= set_time.dancer_id %></td>
+        <td><%= set_time.stage_id %></td>
+        <td><%= set_time.time %></td>
+        <td><%= link_to 'Show', set_time %></td>
+        <td><%= link_to 'Edit', edit_set_time_path(set_time) %></td>
+        <td><%= link_to 'Destroy', set_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Set Time', new_set_time_path %>
