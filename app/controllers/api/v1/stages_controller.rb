@@ -7,11 +7,17 @@ module Api
       # GET /stages.json
       def index
         @stages = Stage.all
+
+        respond_to do |format|
+          format.html {  }
+          format.json { json_response(@stages) }
+        end
       end
     
       # GET /stages/1
       # GET /stages/1.json
       def show
+        get_data
       end
     
       # GET /stages/new
@@ -31,7 +37,7 @@ module Api
         respond_to do |format|
           if @stage.save
             format.html { redirect_to @stage, notice: 'Stage was successfully created.' }
-            format.json { render :show, status: :created, location: @stage }
+            format.json { render json: @stage, status: :created }
           else
             format.html { render :new }
             format.json { render json: @stage.errors, status: :unprocessable_entity }
@@ -59,11 +65,18 @@ module Api
         @stage.destroy
         respond_to do |format|
           format.html { redirect_to stages_url, notice: 'Stage was successfully destroyed.' }
-          format.json { head :no_content }
+          format.json { render json: @dancers, status: :ok }
         end
       end
     
       private
+        def get_data
+          # trying not to repeat myself
+          @set_times = SetTime.all
+          @dancers = Dancer.all
+          @stages = Stage.all
+        end
+
         # Use callbacks to share common setup or constraints between actions.
         def set_stage
           @stage = Stage.find(params[:id])
@@ -71,10 +84,9 @@ module Api
     
         # Never trust parameters from the scary internet, only allow the white list through.
         def stage_params
-          params.require(:stage).permit(:name)
+          params.permit(:name)
         end
     end
-    
   end
 end
 

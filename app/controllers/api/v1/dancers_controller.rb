@@ -8,7 +8,7 @@ module Api
       def index
         @dancers = Dancer.all
         respond_to do |format|
-          format.html { "nothing here" }
+          format.html {  }
           format.json { json_response(@dancers) }
         end
       end

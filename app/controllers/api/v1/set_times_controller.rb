@@ -9,7 +9,7 @@ module Api
         get_data
 
         respond_to do |format|
-          format.html { 'it worked' }
+          format.html {  }
           format.json { json_response([@stages, @set_times, @dancers]) }
         end
       end
