@@ -64,10 +64,11 @@ module Api
       # DELETE /set_times/1
       # DELETE /set_times/1.json
       def destroy
+        get_data
         @set_time.destroy
         respond_to do |format|
           format.html { redirect_to set_times_url, notice: 'Set time was successfully destroyed.' }
-          format.json { render json: @success }
+          format.json { render json: @set_times, status: :ok }
         end
       end
     
