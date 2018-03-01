@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @set_time.time %>
+</p>
+
+<p>
+  <strong>Dancer:</strong>
+  <%= @set_time.dancer_id %>
+</p>
+
+<p>
+  <strong>Stage:</strong>
+  <%= @set_time.stage_id %>
+</p>
+
+<%= link_to 'Edit', edit_set_time_path(@set_time) %> |
+<%= link_to 'Back', set_times_path %>

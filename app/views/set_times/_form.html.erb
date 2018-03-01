@@ -1,0 +1,32 @@
+<%= form_with(model: set_time, local: true) do |form| %>
+  <% if set_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(set_time.errors.count, "error") %> prohibited this set_time from being saved:</h2>
+
+      <ul>
+      <% set_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time, id: :set_time_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dancer_id %>
+    <%= form.number_field :dancer_id, id: :set_time_dancer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stage_id %>
+    <%= form.number_field :stage_id, id: :set_time_stage_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
