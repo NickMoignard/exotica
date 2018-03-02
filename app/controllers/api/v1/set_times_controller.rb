@@ -10,7 +10,7 @@ module Api
 
         respond_to do |format|
           format.html {  }
-          format.json { json_response([@stages, @set_times, @dancers]) }
+          format.json { json_response(@set_times) }
         end
       end
     
