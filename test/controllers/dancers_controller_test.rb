@@ -17,7 +17,11 @@ class DancersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create dancer" do
     assert_difference('Dancer.count') do
+<<<<<<< HEAD
       post dancers_url, params: { dancer: { account: @dancer.account, full_name: @dancer.full_name, stage_name: @dancer.stage_name } }
+=======
+      post dancers_url, params: { dancer: { account: @dancer.account, fake_name: @dancer.fake_name, full_name: @dancer.full_name } }
+>>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
     end
 
     assert_redirected_to dancer_url(Dancer.last)
@@ -34,7 +38,11 @@ class DancersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update dancer" do
+<<<<<<< HEAD
     patch dancer_url(@dancer), params: { dancer: { account: @dancer.account, full_name: @dancer.full_name, stage_name: @dancer.stage_name } }
+=======
+    patch dancer_url(@dancer), params: { dancer: { account: @dancer.account, fake_name: @dancer.fake_name, full_name: @dancer.full_name } }
+>>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
     assert_redirected_to dancer_url(@dancer)
   end
 

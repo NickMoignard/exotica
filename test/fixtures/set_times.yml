@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   time: 2018-02-27 01:22:21
   dancer_id: 1
   stage_id: 1
@@ -9,3 +10,13 @@ two:
   time: 2018-02-27 01:22:21
   dancer_id: 1
   stage_id: 1
+=======
+  dancer_id: 1
+  stage_id: 1
+  time: 2018-02-27 14:59:53
+
+two:
+  dancer_id: 1
+  stage_id: 1
+  time: 2018-02-27 14:59:53
+>>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66

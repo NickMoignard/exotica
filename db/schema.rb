@@ -10,20 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180226142555) do
 
   create_table "dancers", force: :cascade do |t|
     t.string "stage_name"
     t.string "full_name"
+=======
+ActiveRecord::Schema.define(version: 20180227035953) do
+
+  create_table "dancers", force: :cascade do |t|
+    t.string "full_name"
+    t.string "fake_name"
+>>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
     t.float "account"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "set_times", force: :cascade do |t|
+<<<<<<< HEAD
     t.datetime "time"
     t.integer "dancer_id"
     t.integer "stage_id"
+=======
+    t.integer "dancer_id"
+    t.integer "stage_id"
+    t.datetime "time"
+>>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
