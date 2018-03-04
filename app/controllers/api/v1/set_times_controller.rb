@@ -6,18 +6,18 @@ module Api
       # GET /set_times
       # GET /set_times.json
       def index
-        get_data
+        get_todays_data
 
         respond_to do |format|
           format.html {  }
-          format.json { json_response([@stages, @set_times, @dancers]) }
+          format.json { json_response(@set_times) }
         end
       end
     
       # GET /set_times/1
       # GET /set_times/1.json
       def show
-        get_data
+        get_todays_data
       end
     
       # GET /set_times/new
@@ -64,7 +64,7 @@ module Api
       # DELETE /set_times/1
       # DELETE /set_times/1.json
       def destroy
-        get_data
+        get_todays_data
         @set_time.destroy
         respond_to do |format|
           format.html { redirect_to set_times_url, notice: 'Set time was successfully destroyed.' }
@@ -77,10 +77,17 @@ module Api
         @success = "Success"
         @failure = "Failure"
 
-        def get_data
+        def get_todays_data
 
-          # trying not to repeat myself
-          @set_times = SetTime.all
+          @all_set_times = SetTime.all.order(:time)
+
+          @until_date = DateTime.now
+          until { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(@until_date.strftime('%A').downcase)
+            @until_date + 1
+          end
+
+          @set_times = @all_set_times.first(180)
+
           @dancers = Dancer.all
           @stages = Stage.all
         end
