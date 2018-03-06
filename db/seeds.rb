@@ -24,7 +24,8 @@
 
 # HELPERS
 def open(day: string)
-    return { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(day)
+    
+    return { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(day.strftime('%A').downcase)
 end
 
 def rand_fake_name

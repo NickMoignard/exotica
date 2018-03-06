@@ -82,9 +82,9 @@ module Api
           @all_set_times = SetTime.all.order(:time)
 
           @until_date = DateTime.now
-          until { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(@until_date.strftime('%A').downcase)
-            @until_date + 1
-          end
+          @until_date_0 = @until_date.dup
+
+          
 
           @set_times = @all_set_times.first(180)
 
@@ -102,6 +102,11 @@ module Api
           params.permit(:fake_name, :stage_name, :time)
         end
       
+        # HELPERS
+        def open(day: string)
+         
+          return { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(day).downcase
+        end
     end
     
   end
