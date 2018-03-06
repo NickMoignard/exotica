@@ -1,47 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= render "header.html" %>
 
-<h1>Set Times</h1>
+<%= render "table.html"%>
 
-<table>
-  <thead>
-    <tr>
-<<<<<<< HEAD
-      <th>Time</th>
-      <th>Dancer</th>
-      <th>Stage</th>
-=======
-      <th>Dancer</th>
-      <th>Stage</th>
-      <th>Time</th>
->>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @set_times.each do |set_time| %>
-      <tr>
-<<<<<<< HEAD
-        <td><%= set_time.time %></td>
-        <td><%= set_time.dancer_id %></td>
-        <td><%= set_time.stage_id %></td>
-=======
-        <td><%= set_time.dancer_id %></td>
-        <td><%= set_time.stage_id %></td>
-<<<<<<< HEAD
-        <td><%= set_time.time %></td>
->>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
-=======
-        <td><%= set_time.time.strftime('%A') %></td>
->>>>>>> ed65eaefb56744b2fc3fc459dcb09d6c7f352681
-        <td><%= link_to 'Show', set_time %></td>
-        <td><%= link_to 'Edit', edit_set_time_path(set_time) %></td>
-        <td><%= link_to 'Destroy', set_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Set Time', new_set_time_path %>

@@ -1,6 +1,6 @@
 module Api 
   module V1
-    class SetTimesController < ApplicationController
+    class SetTimesController < ApiController
       before_action :set_set_time, only: [:show, :edit, :update, :destroy]
     
       # GET /set_times

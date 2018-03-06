@@ -4,9 +4,11 @@ class SetTimesController < ApplicationController
   # GET /set_times
   # GET /set_times.json
   def index
-    @set_times = SetTime.all
+    get_todays_data
+
   end
 
+  
   # GET /set_times/1
   # GET /set_times/1.json
   def show
@@ -69,10 +71,6 @@ class SetTimesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def set_time_params
-<<<<<<< HEAD
-      params.require(:set_time).permit(:time, :dancer_id, :stage_id)
-=======
       params.require(:set_time).permit(:fake_name, :stage_name, :time)
->>>>>>> 6ccd12dee487bbd0f1a6d5ac2171c66784ff9c66
     end
 end

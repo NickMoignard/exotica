@@ -1,6 +1,6 @@
 module Api 
   module V1
-    class DancersController < ApplicationController
+    class DancersController < ApiController
       before_action :set_dancer, only: [:show, :edit, :update, :destroy]
     
       # GET /dancers

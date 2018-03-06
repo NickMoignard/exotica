@@ -1,3 +1,31 @@
 // Place all the styles related to the SetTimes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html *, body *{
+    color: white !important;
+    background-color: #263238 !important; 
+    font-family: 'Work Sans', sans-serif !important;
+
+ }
+ 
+
+// .dark {
+//     color: white;
+//     background-color: #263238;
+// }
+
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+.clear-both {
+    clear: both;
+}
+.centered {
+    width: 100%;
+    text-align: center;
+}

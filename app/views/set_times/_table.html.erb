@@ -1,0 +1,28 @@
+
+<table class="table dark">
+  <thead>
+    <tr>
+      <th>Dancer</th>
+      <th>Stage</th>
+      <th>Time</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @set_times.each do |set_time| %>
+      <tr>
+
+        <td><%= dancer_fake_name(set_time.dancer_id) %></td>
+        <td><%= stage_name(set_time.stage_id) %></td>
+        <td><%= set_time.time.strftime('%I:%M %p') %></td>
+
+        <td><%= link_to 'Show', set_time %></td>
+        <td><%= link_to 'Edit', edit_set_time_path(set_time) %></td>
+        <td><%= link_to 'Destroy', set_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,6 +1,6 @@
 module Api 
   module V1
-    class StagesController < ApplicationController
+    class StagesController < ApiController
       before_action :set_stage, only: [:show, :edit, :update, :destroy]
     
       # GET /stages
